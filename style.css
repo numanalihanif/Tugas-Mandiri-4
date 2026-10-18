@@ -1,0 +1,209 @@
+/* ===== Reset & Variabel ===== */
+:root {
+  --navy: #14305c;
+  --blue: #1f5fd6;
+  --blue-soft: #eaf1fd;
+  --green-soft: #e9f8ef;
+  --green: #2a9d5c;
+  --text: #1f2937;
+  --muted: #5b6577;
+  --border: #d9e0ec;
+  --bg: #f4f7fb;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ===== Tombol ===== */
+.btn {
+  display: inline-block;
+  padding: 9px 18px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.btn-primary { background: var(--blue); color: #fff; }
+.btn-primary:hover { background: #174bb0; }
+.btn-outline { border-color: var(--blue); color: var(--blue); background: #fff; }
+.btn-outline:hover { background: var(--blue); color: #fff; }
+.btn-block { display: block; width: 100%; text-align: center; padding: 10px; }
+
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible {
+  outline: 3px solid #f5b83d;
+  outline-offset: 2px;
+}
+
+/* ===== Navbar ===== */
+.navbar { background: var(--navy); color: #fff; }
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 52px;
+}
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; }
+.brand-icon { font-size: 22px; }
+.nav-menu { display: flex; gap: 22px; font-size: 13px; }
+.nav-menu a { padding: 4px 0; color: #dbe6fb; }
+.nav-menu a:hover { color: #fff; }
+.nav-menu a.active { color: #fff; font-weight: 700; border-bottom: 2px solid #fff; }
+
+/* ===== Hero ===== */
+.hero {
+  background: linear-gradient(100deg, #1c4fa8 0%, #2a6ed0 55%, #6aa6e8 100%);
+  color: #fff;
+  overflow: hidden;
+}
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 190px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.hero-text { max-width: 420px; }
+.hero h1 { font-size: 34px; line-height: 1.15; margin-bottom: 12px; }
+.hero p { font-size: 14px; margin-bottom: 18px; color: #e6efff; }
+.hero-building { flex: 1; display: flex; justify-content: flex-end; align-self: flex-end; }
+.building {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* ===== Tentang Kami ===== */
+.about { background: #fff; padding: 32px 0; }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+.about-text h2 { font-size: 20px; color: var(--navy); margin-bottom: 8px; }
+.about-text p { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
+
+.card {
+  padding: 18px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+.card-blue { background: var(--blue-soft); border-color: #c9dbf8; }
+.card-green { background: var(--green-soft); border-color: #bfe6cf; }
+.card-icon {
+  width: 38px; height: 38px;
+  display: grid; place-items: center;
+  background: #fff;
+  border-radius: 8px;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.card h3 { font-size: 15px; color: var(--navy); margin-bottom: 6px; }
+.card p { font-size: 12px; color: var(--muted); margin-bottom: 14px; }
+
+/* ===== Tabel + Form ===== */
+.academic { padding: 32px 0; }
+.academic-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+.panel {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+}
+.panel-head { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 16px; }
+.panel-icon { font-size: 26px; }
+.panel-head h2 { font-size: 16px; color: var(--navy); }
+.panel-head p { font-size: 12px; color: var(--muted); }
+
+.table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.table th {
+  background: var(--navy);
+  color: #fff;
+  padding: 9px 10px;
+  text-align: left;
+  font-weight: 600;
+}
+.table td { padding: 9px 10px; border-bottom: 1px solid var(--border); }
+.table tbody tr:nth-child(even) { background: var(--blue-soft); }
+.table tbody tr:hover { background: #dce8fb; }
+.table th:first-child, .table td:first-child { text-align: center; width: 44px; }
+.table th:last-child, .table td:last-child { text-align: center; }
+
+/* Form */
+.form { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 16px; }
+.form-group { display: flex; flex-direction: column; gap: 4px; }
+.form .full { grid-column: 1 / -1; }
+.form label { font-size: 12px; font-weight: 600; color: var(--navy); }
+.form input, .form select, .form textarea {
+  width: 100%;
+  padding: 9px 10px;
+  font: inherit;
+  font-size: 13px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+}
+.form textarea { resize: vertical; }
+
+/* ===== Footer ===== */
+.footer { background: var(--navy); color: #fff; padding: 16px 0; }
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.footer-left { display: flex; align-items: center; gap: 16px; }
+.footer-address { font-size: 11px; color: #c4d2ee; border-left: 1px solid #4b6797; padding-left: 16px; }
+.social { display: flex; gap: 10px; }
+.social a {
+  width: 30px; height: 30px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,.12);
+  font-size: 13px;
+  font-weight: 700;
+}
+.social a:hover { background: var(--blue); }
+.copyright { font-size: 11px; color: #c4d2ee; }
+
+/* ===== Responsif ===== */
+@media (max-width: 900px) {
+  .about-grid, .academic-grid { grid-template-columns: 1fr; }
+  .navbar-inner { flex-direction: column; padding: 10px 24px; gap: 8px; }
+  .nav-menu { flex-wrap: wrap; justify-content: center; gap: 14px; }
+  .hero-building { display: none; }
+  .footer-inner { justify-content: center; text-align: center; }
+  .footer-address { border-left: 0; padding-left: 0; }
+}
+@media (max-width: 560px) {
+  .form { grid-template-columns: 1fr; }
+  .table { font-size: 12px; }
+  .panel { overflow-x: auto; }
+}
